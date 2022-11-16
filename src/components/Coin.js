@@ -1,16 +1,23 @@
 import React from 'react'
 import './Coin.css'
 
+
 const Coin = ({image,name,price,pricechange,marketcap}) => {
-console.log(typeof(marketcap));
+var u = 'https://www.coingecko.com/en/coins/';
+var url = u.concat(name.toLowerCase().split(' ').join('-'));
+var f2=image.split("/")[5];
+var f1='https://www.coingecko.com/coins/';
+var i1=f1.concat(f2);
+var f3='/sparkline';
+var i=i1.concat(f3);
     return (
         <div className="coin-container">
             <div className="coin-row">
-                <div className="coin">
-                    <img src={image} alt="crypto" />
+                <a href={url} className="coin">
+                    <img  src={image} alt="crypto" />
                     <h1>{name}</h1>
-                    <p className="coin-symbol"></p>
-                </div>
+                    <img  src={i} alt="crypto" style={{width:250}} />
+                </a>
                 <div className="coin-data">
                     <p className="coin-price">{price.toLocaleString()}</p>
                     {pricechange<0 ? (
