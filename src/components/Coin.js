@@ -8,7 +8,7 @@ var url = u.concat(name.toLowerCase().split(' ').join('-'));
 var f2=image.split("/")[5];
 var f1='https://www.coingecko.com/coins/';
 var i1=f1.concat(f2);
-var f3='/sparkline';
+var f3='/sparkline.svg';
 var i=i1.concat(f3);
     return (
         <div className="coin-container">
